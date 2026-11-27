@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "name": "samuel-face-ai",
+  "public": true,
+  "cleanUrls": true,
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}

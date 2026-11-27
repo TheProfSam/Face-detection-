@@ -1,0 +1,13 @@
+{
+  "name": "samuel-face-ai",
+  "version": "1.0.0",
+  "description": "Face Recognition and Ultralytics YOLO Inference Studio",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python -m http.server 3000",
+    "start": "python -m http.server 3000"
+  },
+  "keywords": ["face-recognition", "yolo", "ultralytics", "vercel", "inference-studio"],
+  "author": "Antonio Samuel",
+  "license": "MIT"
+}

@@ -1,0 +1,13 @@
+# Temporary MS Office files
+~$*
+*.tmp
+
+# Operating System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Dependencies & IDE
+node_modules/
+.vscode/
+.idea/

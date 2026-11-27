@@ -1,85 +1,75 @@
-Face Detection Using Machine Learning
+# Personalized Face Detection & Recognition Using Ultralytics YOLO
 
-A machine learning project focused on detecting human faces in images and real-time camera input using Ultralytics computer vision tools, with the goal of integrating the trained model into a mobile application.
+A computer vision and machine learning project focused on detecting personalized human faces in images and real-time streams using Ultralytics YOLOv8n, deployed to an executive web application hosted on Vercel with dedicated Google Cloud Run inference.
 
-Project Overview
+---
 
-Face detection is a computer vision task that involves identifying the locations of human faces within an image or video frame. This project explores the development and deployment of a face detection model using machine learning, from model training and evaluation to mobile integration.
+## Project Overview
 
-The primary objective is to build a face detection system capable of identifying faces accurately and efficiently, with consideration for the performance requirements of mobile devices.
+Face detection is a computer vision task that involves identifying the presence and bounding-box coordinates of human faces within an image or video frame. This project explores the training, evaluation, and deployment of a personalized face detection model using deep learning and the Ultralytics YOLO framework.
 
-Objectives
+The primary objective is to build an efficient, mobile-accessible face detection system capable of identifying a target individual accurately across varying lighting conditions, backgrounds, facial expressions, and clothing styles.
 
-Develop a face detection model using machine learning.
+### Objectives
+* **Data Collection & Annotation:** Curate a custom dataset of 500+ images (individual and group photos) labeled in YOLO format.
+* **Model Training:** Fine-tune a lightweight **YOLOv8n (Nano)** base model using the Ultralytics Platform.
+* **Model Evaluation:** Measure precision, recall, mAP@50, and latency benchmarks.
+* **Cloud Deployment:** Deploy a dedicated inference endpoint on Google Cloud Run.
+* **Web & Mobile Application:** Build an inference studio web application deployed on Vercel for live testing and confidence tuning.
 
-Use Ultralytics tools for model development and inference.
+---
 
-Prepare and evaluate a suitable face detection dataset.
+## Technologies and Tools
 
-Measure model performance using appropriate evaluation metrics.
+| Technology | Purpose |
+| :--- | :--- |
+| **Python** | Scripting, data pipeline, and evaluation |
+| **Ultralytics YOLOv8n** | Computer vision architecture for face detection |
+| **PyTorch** | Deep learning framework underlying YOLO |
+| **Google Cloud Run** | Dedicated serverless container hosting the inference engine |
+| **HTML5 Canvas / JS** | Real-time bounding box rendering and live parameter controls |
+| **Tailwind CSS** | Dashboard UI design inspired by modern analytics interfaces |
+| **Vercel** | Web application hosting and CDN distribution |
+| **Git / GitHub** | Version control and academic project documentation |
 
-Optimize and export the model for mobile deployment.
+---
 
-Integrate face detection functionality into a mobile application.
+## Live Inference Endpoint
 
-Explore the trade-offs between detection accuracy, inference speed, and mobile resource consumption.
+The model is hosted on a dedicated Google Cloud Run instance:
+* **Inference URL:** `https://predict-6b08f46b1522388bcc62ddd7-dproatj77a-nw.a.run.app/predict`
+* **API Documentation:** `https://predict-6b08f46b1522388bcc62ddd7-dproatj77a-nw.a.run.app/docs`
 
-Technologies and Tools
+---
 
-Technology
+## Running the Web App Locally
 
-Purpose
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/TheProfSam/Face-detection-.git
+   cd Face-detection-
+   ```
 
-Python
+2. Start a local HTTP server:
+   ```bash
+   python -m http.server 3000
+   ```
 
-Model development and experimentation
+3. Open **`http://localhost:3000`** in your browser.
 
-Ultralytics
+---
 
-Computer vision model training and inference
+## Deploying to Vercel
 
-PyTorch
+The project includes `vercel.json` for zero-configuration deployment:
 
-Deep learning framework used by supported Ultralytics models
+### Option 1: Via Vercel CLI
+```bash
+npx vercel
+```
 
-OpenCV
-
-Image and video processing, where required
-
-Jupyter Notebook
-
-Interactive experimentation and analysis
-
-Git and GitHub
-
-Version control and project documentation
-
-Mobile development framework
-
-Application development and model integration; to be determined
-
-ONNX or another supported export format
-
-Potential model export for deployment
-
-The final technologies and export format will depend on the selected model architecture and mobile development framework.
-
-How It Works
-
-The planned workflow consists of the following stages:
-
-Data collection: Obtain or create a suitable dataset containing images of human faces.
-
-Data annotation: Label face locations using bounding boxes (rectangular coordinates identifying the position of each face).
-
-Data preparation: Organize the dataset into training, validation, and test sets.
-
-Model training: Train or fine-tune a compatible Ultralytics detection model using the prepared dataset.
-
-Model evaluation: Assess detection accuracy and performance on images not used during training.
-
-Model export: Export the trained model to a format compatible with the intended deployment environment.
-
-Mobile integration: Connect the model to the mobile application's camera or image-processing pipeline.
-
-Performance testing: Evaluate detection accuracy, inference latency, memory usage, and overall application responsiveness on a target mobile device.
+### Option 2: Via Vercel Dashboard
+1. Go to [vercel.com](https://vercel.com).
+2. Click **Add New...** → **Project**.
+3. Import the `TheProfSam/Face-detection-` repository.
+4. Click **Deploy**.
